@@ -7,4 +7,9 @@ class IPCCog(commands.Cog):
     @ipc.server.route()
     async def get_list_guild(self , data):
         print("get_list_guild called")
-        return bot.guilds
+        # result = list(self.bot.guilds)
+        result = []
+        for guild in self.bot.guilds:
+            result.append([guild.id , guild.name, guild.member_count])
+        print(result)
+        return result

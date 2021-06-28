@@ -6,11 +6,12 @@ import os
 
 
 app = Quart(__name__)
-ipc_client = ipc.Client(os.getenv("IPC_SECRET"))
+ipc_client = ipc.Client(secret_key = os.getenv("IPC_SECRET"))
 
 @app.route("/")
 async def index():
-    guilds = ipc_client.request("get_list_guild")
-    return("Hi")
+    guilds = await ipc_client.request("get_list_guild")
+    print(type(guilds))
+    return(str(guilds))
 
 app.run()
