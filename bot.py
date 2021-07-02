@@ -3,8 +3,11 @@ from dotenv import load_dotenv
 import os
 from ai import ask
 from discord.ext import commands, ipc
-from cogs import answer
-from cogs import ipc as IPC
+from src import answer
+from src import ipc as IPC
+from src import register
+# from cogs import answer
+# from cogs import ipc as IPC
 from sqlalchemy import create_engine
 
 load_dotenv()
@@ -26,6 +29,7 @@ class MyBot(commands.Bot):
 bot = MyBot(command_prefix="!")
 bot.add_cog(answer.AnswerCog(bot , ask))
 bot.add_cog(IPC.IPCCog(bot))
+bot.add_cog(register.RegisterCog(bot))
 
 bot.ipc.start()
 bot.run(token)
