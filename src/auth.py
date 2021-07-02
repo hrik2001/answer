@@ -53,3 +53,12 @@ async def logout():
         except:
             pass
         return(redirect("/login"))
+
+@auth.route("/context/<int:guild_id>", methods=["GET", "POST"])
+async def context(guild_id):
+    if request.method == "GET":
+        return(await render_template("context.html" , guild_id = guild_id))
+    elif request.method == "POST":
+        form = await request.form
+        return("context changed")
+
