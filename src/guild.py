@@ -18,7 +18,6 @@ guild = Blueprint("guild", __name__ , template_folder="templates")
 @guild.route("/create", methods=["GET"])
 async def create():
     if request.method == "GET":
-        # return "hi"
         try:
             prev_entry = sess.query(models.Verify).filter_by(username = session["user"]).first()
             if prev_entry:
@@ -32,3 +31,24 @@ async def create():
                 return(otp)
         except:
             return(redirect("/login"))
+
+@guild.route("/context/<int:guild_id>", methods=["GET", "POST"])
+async def context(guild_id):
+    try:
+        username = session["user"]
+        guild = sess.query(models.Guild).filter_by(id = int(guild_id)).first()
+        if username == guild.username:
+            if(not guild):
+                return "Guild doesnt exist"
+            if request.method == "GET":
+                return(await render_template("context.html" , guild_id = guild_id, guild_name = guild.name))
+            elif request.method == "POST":
+                form = await request.form
+                guild.context = form["context"]
+                sess.commit()
+                return("context changed for "+ str(guild_id))
+        else:
+            return "You don't own this server"
+    except:
+        return "You need to login first"
+

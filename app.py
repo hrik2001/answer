@@ -20,12 +20,10 @@ ipc_client = ipc.Client(secret_key = os.getenv("IPC_SECRET"))
 @app.route("/servers")
 async def servers():
     guilds = await ipc_client.request("get_list_guild")
-    print(type(guilds))
     return(str(guilds))
 
 @app.route("/")
 async def index():
-    # session["test"]="hello"
-    return("!answer")
+    return("welcome to !answer")
 
 app.run()
