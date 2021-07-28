@@ -53,4 +53,3 @@ async def logout():
         except:
             pass
         return(redirect("/login"))
-

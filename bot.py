@@ -3,11 +3,11 @@ from dotenv import load_dotenv
 import os
 from ai import ask
 from discord.ext import commands, ipc
-from src import answer
-from src import ipc as IPC
-from src import register
-# from cogs import answer
-# from cogs import ipc as IPC
+# from src import answer
+# from src import ipc as IPC
+# from src import register
+from src.cogs import ipc as IPC
+from src.cogs import register , answer
 from sqlalchemy import create_engine
 
 load_dotenv()
