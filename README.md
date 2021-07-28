@@ -5,6 +5,7 @@ Best used to answer a user's doubt about FAQs or rules or venue.
 !answer also plans to release moderation tools and a real time dashboard for the ease of discord admins and moderators  
 
 <br>
+
 ## Installation
 If you want to use it locally or host this yourself, then here is what you have to do.   
 *Note: For local users its recommended to use virtualenv or any other such environment*
