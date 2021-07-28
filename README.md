@@ -34,8 +34,8 @@ First run would make you download the pre-trained model. After that, there won't
 Fork this repo and follow the above steps (for your own repo, not the upstream aka this repo)  
 After that go to your freshly downloaded repo and add the following  
 ```bash
-git remote add upstream https://github.com/hrik2001/answer.git   #if you want to install via https
-git remote add upstream git@github.com:hrik2001/answer.git       #if you want to install via ssh
+git remote add upstream https://github.com/hrik2001/answer.git   #if you want http remote
+git remote add upstream git@github.com:hrik2001/answer.git       #if you want ssh remote
 ```
 Now, you can pull from upstream to make updates to the `master` branch of your fork and also locally  
 That's all folks!
