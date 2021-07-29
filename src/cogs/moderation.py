@@ -9,7 +9,7 @@ class ModerationCog(commands.cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print("Connected Modretion Cogs")
+        print("Connected Moderation Cogs")
 
     @commands.command()
     @commands.has_permissions(manage_messages=True)
@@ -26,6 +26,8 @@ class ModerationCog(commands.cog):
     async def kick(self, ctx, member: discord.Member, *, reason="None"):
         try:
             await member.kick(reason=reason)
+            msg= await ctx.send("Kicked Successfully")
+            await msg.delete(delay=5)
         except MissingPermissions:
             await ctx.send("You don't have required permissions to take that action")
     
@@ -34,6 +36,8 @@ class ModerationCog(commands.cog):
     async def ban(ctx, member: discord.Member, *, reason="None"):
         try:
             await member.ban(reason=reason)
+            msg= await ctx.send("banned Successfully")
+            await msg.delete(delay=5)
         except MissingPermissions:
             await ctx.send("You don't have required permissions to take that action")
     
