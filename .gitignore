@@ -3,3 +3,4 @@ data.db
 *.swo
 */__pycache__/*
 __pycache__
+answer/
