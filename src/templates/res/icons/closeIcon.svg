@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="closeIcon" transform="translate(-515 -151)">
+    <rect id="Rectangle_15" data-name="Rectangle 15" width="24" height="24" transform="translate(515 151)" fill="none"/>
+    <g id="Group_3" data-name="Group 3" transform="translate(517.25 153.25)">
+      <rect id="Rectangle_13" data-name="Rectangle 13" width="24" height="3.75" rx="1.875" transform="translate(2.652 0) rotate(45)" fill="#fff"/>
+      <rect id="Rectangle_14" data-name="Rectangle 14" width="24" height="3.75" rx="1.875" transform="translate(19.622 2.652) rotate(135)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

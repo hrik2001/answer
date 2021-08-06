@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="menuIcon" transform="translate(-474 -151)">
+    <rect id="Rectangle_10" data-name="Rectangle 10" width="24" height="24" transform="translate(474 151)" fill="none"/>
+    <g id="Group_2" data-name="Group 2" transform="translate(476.25 155.5)">
+      <rect id="Rectangle_8" data-name="Rectangle 8" width="21" height="3" rx="1.5" transform="translate(-0.25 0.5)" fill="#fff"/>
+      <rect id="Rectangle_11" data-name="Rectangle 11" width="21" height="3" rx="1.5" transform="translate(-0.25 6.5)" fill="#fff"/>
+      <rect id="Rectangle_12" data-name="Rectangle 12" width="21" height="3" rx="1.5" transform="translate(-0.25 12.5)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

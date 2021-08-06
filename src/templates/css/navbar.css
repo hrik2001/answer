@@ -1,0 +1,153 @@
+header{
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+nav{
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.6rem;
+}
+
+nav a{
+    margin: 0;
+}
+
+.logo > img{
+    height: 4.8rem;
+    width: 4.8rem;
+}
+
+
+.nav-links{
+    display: none;
+}
+
+.nav-link{
+    text-decoration: none;
+    transition: text-decoration linear 200ms, color linear 200ms;
+}
+.nav-link:hover{
+    color: white;
+    text-decoration: underline;
+    transition: text-decoration linear 200ms, color linear 200ms;
+}
+.nav-link:active{
+    opacity: 0.7;
+    transition: opacity 200ms linear;
+}
+
+
+.menu, .close{
+    height: 4rem;
+    width: 4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+/*Mob Nav*/
+.mob-nav{
+    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 6;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--card-bg);
+}
+.mob-nav-header{
+    display: flex;
+    align-items: center;
+    height: 8rem;
+    justify-content: space-between;
+}
+
+.mob-nav-link{
+    display: block;
+    margin-top: 1.4rem;
+    text-decoration: none;
+    transition: text-decoration linear 200ms, color linear 200ms;
+}
+
+.mob-nav-link:hover{
+    text-decoration: underline;
+    color: white;
+    transition: text-decoration linear 200ms, color linear 200ms;
+}
+
+
+.mob-nav-link:active{
+    opacity: 0.7;
+    transition: opacity 200ms linear;
+}
+
+
+.show-mob-nav{
+    display: block;
+}
+
+/*Nav-bg*/
+.changeNavBg{
+    background-color: black;
+}
+
+
+@media only screen and (min-width: 768px){
+    nav{
+        padding: 0 3.2rem;
+    }
+
+    .mob-nav-link{
+        margin-top: 1.6rem;
+    }
+}
+
+
+@media only screen and (min-width: 1024px){
+    .nav-link{
+        margin-left: 1.6rem;
+    }
+    .nav-links{
+        display: inline-flex;
+    }
+    .menu{
+        display: none;
+    }
+    
+}
+
+@media only screen and (min-width: 1280px){
+    nav{
+        padding: 0 4.8rem;
+    }
+
+    .nav-link{
+        margin-left: 1.8rem;
+    }
+}
+
+@media only screen and (min-width: 1440px){
+    nav{
+        padding: 0 5.6rem;
+    }
+
+    .nav-link{
+        margin-left: 2rem;
+    }
+}
+
+@media only screen and (min-width: 1920px){
+    nav{
+        padding: 0 6.4rem;
+    }
+
+    .nav-link{
+        margin-left: 2.2rem;
+    }
+}

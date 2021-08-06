@@ -1,0 +1,36 @@
+.login{
+    position: relative;
+    z-index: 4;
+}
+.login > h1{
+    text-align: center;
+    color: white;
+    text-transform: none;
+}
+
+.login > button{
+    display: block;
+    margin: auto;
+}
+
+form.login{
+    width: 100%;
+}
+
+@media only screen and (min-width: 768px){
+    form.login{
+        max-width: 500px;
+    }
+}
+@media only screen and (min-width: 1024px){
+    form.login{
+        max-width: 600px;
+    }
+}
+@media only screen and (min-width: 1280px){
+
+}
+
+@media only screen and (min-width: 1440px){
+
+}

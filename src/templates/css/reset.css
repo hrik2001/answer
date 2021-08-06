@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+
+:root{
+    --card-bg: #2C2C2C;
+    --input-bg: #373535;
+    --prm-txt: #CBCBCB;
+}
+
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+/*Body*/
+body{
+    background-color: #1B1A1A;
+}
+
+
+/*TYPOGRAPHY*/
+a, p, input, button{
+    font-size: 1.4rem;
+    font-family: "Roboto", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: var(--prm-txt);
+    margin-bottom: 1.4rem;
+}
+
+h1{
+    font-size: 2.4rem;
+    margin-bottom: 1.4rem;
+    line-height: 1.5;
+}
+
+h2{
+    font-size: 2rem;
+    line-height: 1.5;
+    margin-bottom: 1.4rem;
+}
+
+/*FORM*/
+form{
+    background-color: #747070;
+    max-width: 900px;
+    margin: auto;
+    border-radius: 0.8rem;
+    background-color: var(--card-bg);
+    padding: 1.6rem;
+}
+input{
+    display: block;
+    padding: 1.4rem;
+    border-radius: 0.8rem;
+    width: 100%;
+    border: none;
+    background-color: var(--input-bg);
+    color: var(--prm-txt);
+    border: 1px solid transparent;
+}
+::placeholder{
+    color: var(--prm-txt);
+}
+
+input:focus{
+    outline: none;
+    border-color: #a212ca;
+    color: #b313df;
+}
+
+
+
+/*Button*/
+button{
+    padding: 1.2rem 4.8rem;
+    border-radius: 0.4rem;
+    background-image: linear-gradient(120deg, #8C10AF, #E24A94, #FF7700);
+    color: white;
+    text-decoration: none;
+    text-transform: none;
+    border-radius: 0.4rem;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover{
+    opacity: 0.85;
+    transition: opacity linear 200ms;
+}
+
+button:active{
+    opacity: 0.65;
+}
+
+/*CONTAINERS*/
+main{
+    position: relative;
+    z-index: 2;
+    padding: 2.4rem 1.6rem;
+}
+
+
+/*BACKGROUND*/
+.background{
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+    display: block;
+    top: 0px;
+    right: 0;
+    width: 400px;
+}
+
+
+
+
+/*MEDIA QUERRIES*/
+@media only screen and (min-width: 768px){
+
+    main{
+        padding: 3.2rem;
+    }
+
+    a, p, input, button{
+        font-size: 1.6rem;
+        margin-bottom: 1.6rem;
+    }
+
+    h1{
+        font-size: 3.2rem;
+        margin-bottom: 1.6rem;
+    }
+
+    
+    h2{
+        font-size: 2.4rem;
+        margin-bottom: 1.6rem;
+    }
+
+    form{
+        padding: 2rem;
+    }
+
+    button{
+        padding: 1.4rem 4.8rem;
+    }
+
+    .background{
+        width: 600px;
+    }
+}
+
+@media only screen and (min-width: 1280px){
+    a, p, input, button{
+        font-size: 1.8rem;
+        margin-bottom: 1.8rem;
+    }
+
+    h1{
+        font-size: 4.8rem;
+        margin-bottom: 1.8rem;
+    }
+    
+    h2{
+        font-size: 3.2rem;
+        margin-bottom: 1.8rem;
+    }
+
+    form{
+        padding: 2.2rem;
+    }
+
+    main{
+        padding: 4.8rem;
+    }
+
+    .background{
+        width: 700px;
+    }
+}
+
+@media only screen and (min-width: 1440px){
+    a, p, input, button{
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    h1{
+        font-size: 5.6rem;
+        margin-bottom: 2rem;
+    }
+
+    h2{
+        font-size: 4rem;
+        margin-bottom: 2rem;
+    }
+
+    form{
+        padding: 2.4rem;
+    }
+
+    .background{
+        width: 800px;
+    }
+}
+
+@media only screen and (min-width: 1920px){
+    a, p, input, button{
+        font-size: 2.2rem;
+        margin-bottom: 2.2rem;
+    }
+
+    h1{
+        font-size: 6.4rem;
+        margin-bottom: 2.2rem;
+    }
+    
+    h2{
+        font-size: 4.8rem;
+        margin-bottom: 2.2rem;
+    }
+
+    form{
+        padding: 2.8rem;
+    }
+    .background{
+        width: 900px;
+    }
+}

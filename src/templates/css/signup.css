@@ -1,0 +1,29 @@
+.signup{
+    position: relative;
+    z-index: 4;
+}
+.signup > h1{
+    text-align: center;
+    color: white;
+    text-transform: none;
+}
+
+.signup > button{
+    display: block;
+    margin: auto;
+}
+
+form.signup{
+    width: 100%;
+}
+
+@media only screen and (min-width: 768px){
+    form.signup{
+        max-width: 500px;
+    }
+}
+@media only screen and (min-width: 1024px){
+    form.signup{
+        max-width: 600px;
+    }
+}

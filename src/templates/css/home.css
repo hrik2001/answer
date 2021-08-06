@@ -1,0 +1,349 @@
+section{
+    display: flex;
+}
+
+
+.what-is-answer{
+    display: block;
+}
+
+.what-is-answer img{
+    display: block;
+    margin: auto;
+    max-height: 250px;
+}
+
+
+/*Details*/
+.what-is-answer h1{
+    margin-top: 2.4rem;
+}
+h1{
+    background-image: linear-gradient(#AEDAFA, #9B1E9D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+.what-is-answer h1, .what-is-answer p{
+    text-align: center;
+}
+
+
+/*SIGN UP*/
+.sign-up{
+    text-decoration: none;
+}
+.sign-up > button{
+    margin-top: 2rem;
+    display: block;
+    margin: auto;
+}
+
+
+hr{
+    display: block;
+    max-width: 300px;
+    margin: 2.4rem auto;
+    border: 2px solid white;
+    border-radius: 25rem;
+}
+
+
+/*WHAT CAN ANSWER DO !*/
+.what-can-answer-do{
+    display: block;
+}
+.what-can-answer-do h1{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+
+/*CARDS CONTAINER*/
+.card-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+}
+
+.card{
+    border-radius: 0.8rem;
+    display: block;
+    padding: 2rem;
+    background-color: #ECECEC;
+}
+
+.card > h2{
+    text-align: center;
+    border-bottom: 5px solid black;
+    padding-bottom: 1.4rem;
+    margin-bottom: 0;
+}
+
+
+/*CONTRIBUTION CONTAINER*/
+.contributions{
+    display: block;
+}
+.contributions h1{
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.contribution-grid{
+    display: grid;
+    border-radius: 1rem;
+    grid-template-columns: 1fr;
+    background-color: #ECECEC;
+    max-width: 800px;
+    margin: auto;
+}
+
+.contribution-card{
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.contribution-grid .contribution-card:nth-child(2){
+    border-top: 5px solid #636363;
+    margin-top: 0;
+    color: black;
+    padding-top: 1.4rem;
+}
+.contribution-grid .contribution-card:nth-child(2) p{
+    color: black;
+    text-align: center;
+}
+
+.contribution-grid .contribution-card:nth-child(1){
+    margin-bottom: 0;
+}
+
+.social{
+    display: flex;
+    align-items: center;
+}
+.social a{
+    margin: 0 0.7rem;
+}
+
+
+@media only screen and (min-width: 768px){
+    .what-is-answer{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+    }
+    .what-is-answer h1{
+        margin-top: 0;
+        text-align: left;
+    }
+    .what-is-answer p{
+        text-align: left;
+    }
+    .what-is-answer > .details{
+        margin-right: 1.8rem;
+    }
+    .what-is-answer > img{
+        max-height: 300px;
+        margin: 0;
+    }
+    .what-is-answer .details{
+        max-width: 600px;
+    }
+
+    hr{
+        max-width: 500px;
+        margin: 3.2rem auto;
+    }
+
+
+    /*SIGN UP*/
+    .sign-up > button{
+        margin: 2.4rem 0;
+    }
+
+    .card-container{
+        grid-template-columns: 1fr 1fr;
+        gap: 1.6rem;
+    }
+
+    .card{
+        padding: 2.2rem;
+    }
+
+    
+    .contribution-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contribution-card{
+        margin: 2.2rem;
+    }
+
+    .contribution-grid .contribution-card:nth-child(2){
+        border-left: 5px solid #636363;
+        border-top: none;
+        padding-top: 0;
+        margin-left: 0;
+        margin-top: 2rem;
+    }
+    
+    .contribution-grid .contribution-card:nth-child(2) p{
+        padding: 0 1.6rem;
+    }
+    .contribution-grid .contribution-card:nth-child(1){
+        margin-right: 0;
+    }
+
+    .social a{
+        margin: 0 0.8rem;
+    }
+}
+
+
+@media only screen and (min-width: 1024px){
+    .card-container{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 1280px){
+    .what-is-answer > img{
+        max-height: 400px;
+    }
+
+    hr{
+        max-width: 600px;
+        margin: 4.8rem auto;
+    }
+    
+    /*SIGN UP*/
+    .sign-up > button{
+        margin-top: 2.8rem;
+    }
+
+    .card-container{
+        gap: 1.8rem;
+    }
+
+    .card{
+        padding: 2.4rem;
+    }
+    .contribution-grid{
+        max-width: 1000px;
+    }
+
+    .contribution-card{
+        margin: 2.4rem;
+        
+    }
+    .contribution-grid .contribution-card:nth-child(2){
+        margin-left: 0;
+    }
+    
+    .contribution-grid .contribution-card:nth-child(2) p{
+        padding: 0 1.8rem;
+    }
+    .contribution-grid .contribution-card:nth-child(1){
+        margin-right: 0;
+    }
+
+    .social a{
+        margin: 0 0.9rem;
+    }
+}
+
+
+@media only screen and (min-width: 1440px){
+    .what-is-answer > img{
+        max-height: 400px;
+    }
+
+    hr{
+        margin: 5.6rem auto;
+    }
+    
+    /*SIGN UP*/
+    .sign-up > button{
+        margin-top: 3.2rem;
+    }
+
+    .card-container{
+        gap: 2rem;
+    }
+
+    .card{
+        padding: 2.8rem;
+    }
+
+    .contribution-card{
+        margin: 2.8rem;
+        
+    }
+    .contribution-grid .contribution-card:nth-child(2){
+        margin-left: 0;
+    }
+    
+    .contribution-grid .contribution-card:nth-child(2) p{
+        padding: 0 2rem;
+    }
+    .contribution-grid .contribution-card:nth-child(1){
+        margin-right: 0;
+    }
+    
+    .social a{
+        margin: 0 1rem;
+    }
+}
+
+
+@media only screen and (min-width: 1920px){
+    .what-is-answer > img{
+        max-height: 500px;
+    }
+
+    hr{
+        margin: 6.4rem auto;
+    }
+    
+    /*SIGN UP*/
+    .sign-up > button{
+        margin-top: 3.6rem;
+    }
+
+    .card-container{
+        gap: 2.2rem;
+    }
+
+    .card{
+        padding: 3.2rem;
+    }
+
+    .contribution-card{
+        margin: 3.2rem;
+        
+    }
+    .contribution-grid .contribution-card:nth-child(2){
+        margin-left: 0;
+    }
+    
+    .contribution-grid .contribution-card:nth-child(2) p{
+        padding: 0 2.2rem;
+    }
+    .contribution-grid .contribution-card:nth-child(1){
+        margin-right: 0;
+    }
+    
+    .social a{
+        margin: 0 1.1rem;
+    }
+}
