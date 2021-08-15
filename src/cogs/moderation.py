@@ -19,10 +19,13 @@ class ModerationCog(commands.Cog):
             await ctx.channel.purge(limit=amount)
             msg= await ctx.send(f"Deleted {amount} messages.")
             await msg.delete(delay=5)
-        except MissingPermissions:
-            await ctx.send("You don't have required permissions to take that action")
         except:
             await ctx.send("Something went wrong, please check my permissions")
+
+    @clear.error
+    async def clear_error(self , ctx , error):
+        if isinstance(error, MissingPermissions):
+            await ctx.send("You don't have required permissions to take that action")
 
     @commands.command()
     @commands.has_permissions(kick_members=True)
@@ -31,10 +34,13 @@ class ModerationCog(commands.Cog):
             await member.kick(reason=reason)
             msg= await ctx.send("Kicked Successfully")
             await msg.delete(delay=5)
-        except MissingPermissions:
-            await ctx.send("You don't have required permissions to take that action")
         except:
             await ctx.send("Something went wrong, please check my permissions")
+
+    @kick.error
+    async def kick_error(self , ctx , error):
+        if isinstance(error, MissingPermissions):
+            await ctx.send("You don't have required permissions to take that action")
 
     @commands.command()
     @commands.has_permissions(ban_members=True)
@@ -43,10 +49,13 @@ class ModerationCog(commands.Cog):
             await member.ban(reason=reason)
             msg= await ctx.send("banned Successfully")
             await msg.delete(delay=5)
-        except MissingPermissions:
-            await ctx.send("You don't have required permissions to take that action")
         except:
             await ctx.send("Something went wrong, please check my permissions")
+
+    @ban.error
+    async def ban_error(self , ctx , error):
+        if isinstance(error, MissingPermissions):
+            await ctx.send("You don't have required permissions to take that action")
 
     @commands.command()
     @commands.has_permissions(ban_members=True)
@@ -61,7 +70,10 @@ class ModerationCog(commands.Cog):
                 if(user.name, user.discriminator)==(member_name,member_discriminator):
                     await ctx.guild.unban(user)
                     await ctx.send(f'unbanned {user.mention}')
-        except MissingPermissions:
-            await ctx.send("You don't have required permissions to take that action")
         except:
             await ctx.send("Something went wrong, please check my permissions")
+
+    @unban.error
+    async def unban_error(self , ctx , error):
+        if isinstance(error, MissingPermissions):
+            await ctx.send("You don't have required permissions to take that action")
