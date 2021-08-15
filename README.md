@@ -6,7 +6,9 @@ Best used to answer a user's doubt about FAQs or rules or venue.
 
 
 ## Installation
-If you want to use it locally or host this yourself, then here is what you have to do.   
+If you want to use it locally or host this yourself, then here is what you have to do.  
+Before proceeding make sure you have [cmake](https://cmake.org/download/)    
+Also make sure you have `protobuf` installed via `pip install protobuf`    
 *Note: For local users its recommended to use virtualenv or any other such environment*
 ```bash
 git clone --recurse-submodules https://github.com/hrik2001/answer.git   #if you want to install via https
