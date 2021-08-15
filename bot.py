@@ -7,7 +7,7 @@ from discord.ext import commands, ipc
 # from src import ipc as IPC
 # from src import register
 from src.cogs import ipc as IPC
-from src.cogs import register , answer
+from src.cogs import register , answer, moderation
 from sqlalchemy import create_engine
 
 load_dotenv()
@@ -30,6 +30,7 @@ bot = MyBot(command_prefix="!")
 bot.add_cog(answer.AnswerCog(bot , ask))
 bot.add_cog(IPC.IPCCog(bot))
 bot.add_cog(register.RegisterCog(bot))
+bot.add_cog(moderation.ModerationCog(bot))
 
 bot.ipc.start()
 bot.run(token)
