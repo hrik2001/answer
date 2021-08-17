@@ -1,24 +1,24 @@
 # Frontend
-- [] UI/UX
+- [X] UI/UX
 - [] Navbar (logged in users)
 - [] Dashboard where you can see all your guilds (show additional details)
 - [] Page explaining the commands
-- [] Context Page
+- [X] Context Page
 - [] Channel Based Context Page
-- [] Login Page
-- [] Signup
+- [X] Login Page
+- [X] Signup
 - [] Premium Feature (tbd)
 
 #Backend
 - [] Updated values according to events (event listeners)
-- [] Roles database
-- [] Schema changes for multiple contexts
+- [X] Roles database
+- [X] Schema changes for multiple contexts
 
 #Discord Bot
-- [] Roles
+- [X] Roles
 - [] Event Listeners
-- [] Basic Moderation features
-- [] Different contexts based on channels
+- [X] Basic Moderation features
+- [X] Different contexts based on channels
 
 #Experimental
 - [] Translation

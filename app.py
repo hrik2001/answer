@@ -29,9 +29,10 @@ app.register_blueprint(guild.guild)
 ipc_client = ipc.Client(secret_key = os.getenv("IPC_SECRET"))
 
 #merely for testing purpose
-@app.route("/servers")
-async def servers():
-    guilds = await ipc_client.request("get_list_guild")
+@app.route("/channels/<int:gid>")
+async def servers(gid):
+    # guilds = await ipc_client.request("channels" , guild_id = 860087871049564170)
+    guilds = await ipc_client.request("channels" , guild_id = gid)
     return(str(guilds))
 
 @app.route("/")
