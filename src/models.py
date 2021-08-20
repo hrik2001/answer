@@ -28,6 +28,14 @@ class Verify(Base):
     username = Column(String(500), primary_key=True)
     otp = Column(String(10))
 
+class Context(Base):
+    __tablename__ = "context"
+    id = Column(Integer , primary_key=True, autoincrement=True)
+    guild_id = Column(Integer)
+    channel_id = Column(Integer, default=1)
+    name = Column(String(500))
+    para = Column(String(1000))
+
 def create(engine):
     Base.metadata.create_all(engine)
 
