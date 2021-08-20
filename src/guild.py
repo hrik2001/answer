@@ -52,3 +52,11 @@ async def context(guild_id):
     except:
         return "You need to login first"
 
+@guild.route("/dashboard" , methods = ["GET"] )
+async def dashboard():
+    try:
+        username = session["user"]
+        guilds = sess.query(models.Guild).filter_by(username = username).all()
+        return (await render_template("dashboard.html" , guilds = guilds))
+    except:
+        return "You need to login first"

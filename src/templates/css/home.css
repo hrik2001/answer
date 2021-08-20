@@ -82,6 +82,11 @@ hr{
     margin-bottom: 0;
 }
 
+.card > p{
+    text-align: center;
+    color: black;
+}
+
 
 /*CONTRIBUTION CONTAINER*/
 .contributions{

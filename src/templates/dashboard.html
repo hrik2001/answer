@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/home.css">
-    <title>Context | {{guild_name}}</title>
+    <title>Dashboard</title>
 </head>
 <body>
     <img class="background" src="/res/icons/bgLayer.svg" alt="background"/>
@@ -43,16 +43,13 @@
         </nav>
     </header>
 
-    <main>
-        <form action = "/context/{{guild_id}}" method = "post">
-        <center>
-            <h1>{{guild_name}}</h1>
-            <p><textarea type = "text" name = "context" placeholder="context" size="50"></textarea></p>
-
-            <button class="button"><b>SUMBIT</b></button>
-        </center>
-        </form>
-    </main>
-    <script src="/js/nav.js"></script>
+        <main>
+            <div><center><a href="/create"><Button style="">Create</Button></a></center></div>
+            <center><h1>Your Guilds<h1></center>
+            {% for i in guilds %}
+            <div><a href="/context/{{i.id}}"<p style="color: white;">{{i.name}}</p></a></div>
+            {% endfor %}
+        </main>
+        <script src="/js/nav.js"></script>
 </body>
 </html>

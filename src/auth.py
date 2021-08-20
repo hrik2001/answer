@@ -31,7 +31,7 @@ async def login():
                 return("wrong password")
         else:
             return("account doesn't exist")
-        return(redirect("/"))
+        return(redirect("/dashboard"))
 
 @auth.route("/signup", methods=["GET" , "POST"])
 async def signup():

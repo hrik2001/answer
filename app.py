@@ -1,4 +1,4 @@
-from quart import render_template, Quart , session , send_from_directory
+from quart import render_template, Quart , session , send_from_directory , redirect
 from discord.ext import ipc
 from dotenv import load_dotenv
 load_dotenv()
@@ -37,6 +37,10 @@ async def servers(gid):
 
 @app.route("/")
 async def index():
-    return await render_template("home.html")
+    try:
+        username = session["username"]
+        return(redirect("/dashboard"))
+    except:
+        return await render_template("home.html")
 
 app.run()
