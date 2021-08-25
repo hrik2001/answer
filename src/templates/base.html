@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/error.css">
+    {% endblock %}
+ 
+</head>
+
+<body>
+    {% for category, message in get_flashed_messages(with_categories=True) %}
+        <div class="alert alert-{{category}}"> {{ message }}</div>
+    {% endfor %}
+
+    <img class="background" src="res/icons/bgLayer.svg" alt="background"/>
+
+    <header id="header">
+        <nav>
+            <a href="/" class="logo"><img src="res/icons/logo.svg" alt="company logo"/></a>
+            <div class="nav-links">
+                {% block NavLink %} 
+                
+                    <a href="/" class="nav-link ">About</a>
+                    <a href="/documentation" class="nav-link">Documentation</a>
+                    {% if not session.user %}
+                        <a href="signup" class="nav-link" >Sign Up</a>
+                        <a href="login" class="nav-link" >Log in</a>
+                    {% else %}
+                        <a href="/logout" class="nav-link logout" >Logout</a>
+                    {% endif %}
+                {% endblock %}
+            </div>
+            <button class="menu" onclick="openMenu()">
+                <img src="/templates/res/icons/menuIcon.svg" alt="menu btn"/>
+            </button>
+        </nav>
+
+        <nav class="mob-nav" id="mobNav">
+            <div class="mob-nav-header">
+                <a href="" class="logo"><img src="res/icons/logo.svg" alt="company logo"/></a>
+
+                <button class="close" onclick="closeMenu()">
+                    <img src="/templates/res/icons/closeIcon.svg" alt="menu btn"/>
+                </button>
+            </div>
+                {% block MobLink %} 
+                
+                    <a href="/" class="mob-nav-link ">About</a>
+                    <a href="/documentation" class="mob-nav-link">Documentation</a>
+                    {% if not session.user %}
+                        <a href='signup' class="mob-nav-link" >Sign Up</a>
+                        <a href='login'  class="mob-nav-link" >Log in</a>
+                    {% else %}
+                        <a href="/about" class="mob-nav-link" >Logout</a>
+                    {% endif %}
+
+                {% endblock %}
+        </nav>
+    </header>
+
+    {% block content %} {% endblock %}
+    <script src="js/nav.js"></script>
+</body>
+
+</html>
+
+    
+

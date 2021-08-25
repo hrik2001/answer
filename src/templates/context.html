@@ -1,4 +1,22 @@
-<body>
+
+{% extends "base.html" %}
+{% block head %}
+    {{ super() }}
+    <!-- <link rel="stylesheet" href="css/signup.css"> -->
+    <title>Context</title>
+{% endblock %}
+
+{% block NavLink %}
+    {{super()}}
+{% endblock %}
+
+{% block MobLink %}
+    {{super()}}
+{% endblock %}
+
+
+{% block content %} 
+
     <form action = "/context/{{guild_id}}" method = "post">
         <center>
             <h1>{{guild_name}}</h1>
@@ -7,5 +25,7 @@
             <button class="button"><b>SUMBIT</b></button>
         </center>
     </form>
-</body>
+
+
+{% endblock %}
 
