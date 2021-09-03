@@ -1,9 +1,10 @@
-<!-- Check commit before 07fb10783ba9a4af280e5f10ae821fd4449b3e17 if any mistake with this template-->
+
 {% extends "base.html" %}
 {% block head %}
     {{ super() }}
-    <!-- <link rel="stylesheet" href="css/signup.css"> -->
+    
     <title>Context</title>
+    
 {% endblock %}
 
 {% block NavLink %}
@@ -15,17 +16,26 @@
 {% endblock %}
 
 
-{% block content %}
 
-    <form action = "/context/{{guild_id}}" method = "post">
-        <center>
-            <h1>{{guild_name}}</h1>
-            <p><textarea type = "text" name = "context" placeholder="context" size="50"></textarea></p>
+    {% block content %} 
+        <main>
+            <form action = "/context/{{guild_id}}" method = "post">
+                <center>
+                    <h1 style="color:white">{{guild_name}}</h1>
+                    <textarea style="outline:none; margin-bottom:1rem; color:black; padding:2rem" 
+                                 type = "text" 
+                                 name = "context" 
+                                 placeholder="Enter your context here..." 
+                                 autofocus
+                                 cols="100" 
+                                 rows="10" 
+                                 ></textarea>
 
-            <button class="button"><b>SUMBIT</b></button>
-        </center>
-    </form>
+                    <button class="button"><b>SUMBIT</b></button>
+                </center>
+            </form>
+        </main>
+    {% endblock %}
 
 
-{% endblock %}
-
+   
