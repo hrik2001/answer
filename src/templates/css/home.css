@@ -77,9 +77,10 @@ hr{
 
 .card > h2{
     text-align: center;
-    border-bottom: 5px solid black;
+    border-bottom: 3px solid rgb(104, 103, 103);
     padding-bottom: 1.4rem;
     margin-bottom: 0;
+    color:#1B1A1A;
 }
 
 .card > p{
@@ -139,6 +140,11 @@ hr{
     margin: 0 0.7rem;
 }
 
+.logout{
+    border:2px solid white;
+    padding:0 8px 0 8px;
+    border-radius:3px;
+}
 
 @media only screen and (min-width: 768px){
     .what-is-answer{

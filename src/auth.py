@@ -1,4 +1,4 @@
-from quart import Blueprint, session, render_template, request, redirect , current_app
+from quart import flash, Blueprint, session, render_template, request, redirect , current_app
 from . import models
 import bcrypt
 from sqlalchemy.orm import Session
@@ -28,10 +28,14 @@ async def login():
                     session.pop("user")
                 except:
                     pass
-                return("wrong password")
+                await flash('Wrong password!',"error")
+                return await render_template("login.html")
         else:
-            return("account doesn't exist")
-        return(redirect("/dashboard"))
+            await flash('Account does not exist, Please check username',"info")
+            return await render_template("login.html")
+
+        await flash('You were logged in sucessfully!',"success")
+        return(redirect("/"))
 
 @auth.route("/signup", methods=["GET" , "POST"])
 async def signup():
@@ -39,11 +43,18 @@ async def signup():
         return await render_template("signup.html")
     elif request.method == "POST":
         form = await request.form
-        print(form)
-        new_user = models.User(username = form["username"] , password = bcrypt.hashpw(form["password"].encode() , bcrypt.gensalt()))
-        sess.add(new_user)
-        sess.commit()
-        return(redirect("/login"))
+        user_obj = sess.query(models.User).filter_by(username = form["username"]).first()
+        if(user_obj):
+            await flash('Username already taken!',"info")
+            return await render_template("signup.html")
+
+        else:
+            print(form)
+            new_user = models.User(username = form["username"] , password = bcrypt.hashpw(form["password"].encode() , bcrypt.gensalt()))
+            sess.add(new_user)
+            sess.commit()
+            await flash('Your account has been created!',"success")
+            return(redirect("/login"))
 
 @auth.route("/logout", methods=["GET"])
 async def logout():
@@ -52,4 +63,5 @@ async def logout():
             session.pop("user")
         except:
             pass
+        await flash('User Logged out successfully!',"success")
         return(redirect("/login"))

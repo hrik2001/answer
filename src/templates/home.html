@@ -1,81 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/home.css">
-    <title>Home</title>
-</head>
-<body>
-    <img class="background" src="res/icons/bgLayer.svg" alt="background"/>
+<!--Check before this commit if any problem with this template 07fb10783ba9a4af280e5f10ae821fd4449b3e17-->
+{% extends "base.html" %}
+    {% block head %}
+        {{ super() }}
+        <link rel="stylesheet" href="css/home.css">
+        <title>Home</title>
+    {% endblock %}
 
-    <header id="header">
-        <nav>
-            <a href="" class="logo"><img src="res/icons/logo.svg" alt="company logo"/></a>
-            <div class="nav-links">
-                <a href="/about" class="nav-link">About</a>
-                <a href="/documentation" class="nav-link">Documentation</a>
-                <a href="/signup" class="nav-link">Sign Up</a>
-                <a href="/login" class="nav-link">Log In</a>
-            </div>
-            <button class="menu" onclick="openMenu()">
-                <img src="/templates/res/icons/menuIcon.svg" alt="menu btn"/>
-            </button>
-        </nav>
+    {% block NavLink %}
+        {{super()}}
+    {% endblock %}
 
-        <nav class="mob-nav" id="mobNav">
-            <div class="mob-nav-header">
-                <a href="" class="logo"><img src="res/icons/logo.svg" alt="company logo"/></a>
+    {% block MobLink %}
+        {{super()}}
+    {% endblock %}
 
-                <button class="close" onclick="closeMenu()">
-                    <img src="/templates/res/icons/closeIcon.svg" alt="menu btn"/>
-                </button>
-            </div>
-            <a href="/about" class="mob-nav-link">About</a>
-                <a href="/documentation" class="mob-nav-link">Documentation</a>
-                <a href="/signup" class="mob-nav-link">Sign Up</a>
-                <a href="/login" class="mob-nav-link">Log In</a>
-        </nav>
-    </header>
 
-    <main>
-        <section class="what-is-answer">
-            
-            <img src="res/images/heroImg.svg" alt="Hero Section"/>
-            <div class="details">
-                <h1>What is !answer ?</h1>
-                <p>
-                    !answer is an intelligent discord bot that answers intelligently to
-                     your user base’s queries. Moreover it features moderation tools.
-                </p>
+    {% block content %} 
+    
+        <main>
+            <section class="what-is-answer">
+                
+                <img src="res/images/heroImg.svg" alt="Hero Section"/>
+                <div class="details">
+                    <h1>What is !answer ?</h1>
+                    <p>
+                        !answer is an intelligent discord bot that answers intelligently to
+                        your user base’s queries. Moreover it features moderation tools.
+                    </p>
 
-                <a class="sign-up" href="/signup">
-                    <button>
-                        Sign Up
-                    </button>
-                </a>
-            </div>
-        </section>
-        <hr>
-
-        <section class="what-can-answer-do">
-            
-            <h1>What can !answer do ?</h1>
-
-            <div class="card-container">
-                <div class="card">
-                    <h2>Free To Use</h2>
-                    <p style="color: black; padding-top:1.4rem">Answer would always be free to use, and free to add to your guild</p>
+                    <a class="sign-up" href="/signup">
+                        <button>
+                            Sign Up
+                        </button>
+                    </a>
                 </div>
+            </section>
+            <hr>
 
-                <div class="card">
-                    <h2>Easy guilld moderation</h2>
-                    <p style="color: black; padding-top:1.4rem;">This bot comes with powerful guild commands to ease your moderation needs.</p>
-                </div>
-
+<<<<<<< HEAD
                 <div class="card">
                     <h2>All-in-one dashboard</h2>
                     <p style="color: black; padding-top:1.4rem;">Integrated dashboard for easier moderation</p>
@@ -96,36 +58,65 @@
                     <p style="color: black; padding-top:1.4rem;">The code of this project is open source, for your perusal and also for better quality via contribution</p>
                 </div>
             </div>
+=======
+            <section class="what-can-answer-do">
+                
+                <h1>What can !answer do ?</h1>
 
-            <hr>
-        </section>
+                <div class="card-container">
+                    <div class="card">
+                        <h2>Free To Use</h2>
+                    </div>
 
-        <section class="contributions">
-            <h1>Contribution</h1>
-            <div class="contribution-grid">
-                <div class="contribution-card">
-                    <img src="res/icons/logo.svg" alt="logo"/>
-                    <h2>!answer</h2>
-                </div>
-                <div class="contribution-card">
-                    <p>
-                        Are you willing to contribute to !answer GitHub repository? Or contact developers 
-                        for support? Here are the various channels via which you can contact us.
-                    </p>
-                    <div class="social">
-                        <a href="https://github.com/hrik2001/answer">
-                            <img src="res/icons/githubIcon.svg" alt="Github Link"/>
-                        </a>
-                        <a href="https://discord.com/">
-                            <img src="res/icons/discordIcon.svg" alt="Discord Link"/>
-                        </a>
+                    <div class="card">
+                        <h2>Easy guilld moderation</h2>
+                    </div>
+
+                    <div class="card">
+                        <h2>All-in-one dashboard</h2>
+                    </div>
+>>>>>>> 07fb10783ba9a4af280e5f10ae821fd4449b3e17
+
+                    <div class="card">
+                        <h2>State of the art AI</h2>
+                    </div>
+
+                    <div class="card">
+                        <h2>Secure and Safe</h2>
+                    </div>
+
+                    <div class="card">
+                        <h2>Open Source</h2>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
 
-    <script src="js/nav.js"></script>
-</body>
-</html>
+                <hr>
+            </section>
+
+            <section class="contributions">
+                <h1>Contribution</h1>
+                <div class="contribution-grid">
+                    <div class="contribution-card">
+                        <img src="res/icons/logo.svg" alt="logo"/>
+                        <h2>!answer</h2>
+                    </div>
+                    <div class="contribution-card">
+                        <p>
+                            Are you willing to contribute to !answer GitHub repository? Or contact developers 
+                            for support? Here are the various channels via which you can contact us.
+                        </p>
+                        <div class="social">
+                            <a href="https://github.com/" target=”_blank” rel=”noopener noreferrer”>
+                                <img src="res/icons/githubIcon.svg" alt="Github Link"/>
+                            </a>
+                            <a href="https://discord.com/" target=”_blank” rel=”noopener noreferrer”>
+                                <img src="res/icons/discordIcon.svg" alt="Discord Link"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    {% endblock %}
+
 

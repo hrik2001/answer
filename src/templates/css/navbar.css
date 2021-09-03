@@ -97,6 +97,10 @@ nav a{
     background-color: black;
 }
 
+.active{
+    text-decoration: underline !important;
+}
+
 
 @media only screen and (min-width: 768px){
     nav{

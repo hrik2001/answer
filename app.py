@@ -26,6 +26,8 @@ def js(filename):
 # models.create(app.config["db"])
 app.register_blueprint(auth.auth)
 app.register_blueprint(guild.guild)
+# app.register_blueprint(errorHandler.errorHandler)
+
 ipc_client = ipc.Client(secret_key = os.getenv("IPC_SECRET"))
 
 #merely for testing purpose
@@ -42,5 +44,14 @@ async def index():
         return(redirect("/dashboard"))
     except:
         return await render_template("home.html")
+
+
+@app.errorhandler(404)
+async def page_not_found(e):
+    return await render_template("404.html"), 404
+
+@app.errorhandler(500)
+async def not_found_error(error):
+	return await render_template('500.html'),500
 
 app.run()
