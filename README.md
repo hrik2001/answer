@@ -42,3 +42,20 @@ git remote add upstream git@github.com:hrik2001/answer.git       #if you want ss
 Now, you can pull from upstream to make updates to the `master` branch of your fork and also locally  
 That's all folks!
 
+## Screenshots
+ 
+#### About Page 
+![alt text](https://raw.githubusercontent.com/ayush-lab/answer/master/src/screenshots/home.png)
+
+
+#### Signup Page 
+![alt text](https://raw.githubusercontent.com/ayush-lab/answer/master/src/screenshots/signup.png)
+
+#### Login Page 
+![alt text](https://raw.githubusercontent.com/ayush-lab/answer/master/src/screenshots/login.png)
+
+#### Context Page 
+![alt text](https://raw.githubusercontent.com/ayush-lab/answer/master/src/screenshots/context.png)
+
+
+
