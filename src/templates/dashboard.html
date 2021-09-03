@@ -1,55 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/navbar.css">
-    <link rel="stylesheet" href="/css/home.css">
-    <title>Dashboard</title>
-</head>
-<body>
-    <img class="background" src="/res/icons/bgLayer.svg" alt="background"/>
 
-    <header id="header">
-        <nav>
-            <a href="" class="logo"><img src="/res/icons/logo.svg" alt="company logo"/></a>
-            <div class="nav-links">
-                <a href="/about" class="nav-link">About</a>
-                <a href="/documentation" class="nav-link">Documentation</a>
-                <a href="/logout" class="nav-link">Logout</a>
-                <!--<a href="/signup" class="nav-link">Sign Up</a>-->
-                <!--<a href="/login" class="nav-link">Log In</a>-->
-            </div>
-            <button class="menu" onclick="openMenu()">
-                <img src="/res/icons/menuIcon.svg" alt="menu btn"/>
-            </button>
-        </nav>
+{% extends "base.html" %}
+    {% block head %}
+        {{ super() }}
+        <title>Dashboard</title>
+    {% endblock %}
 
-        <nav class="mob-nav" id="mobNav">
-            <div class="mob-nav-header">
-                <a href="" class="logo"><img src="res/icons/logo.svg" alt="company logo"/></a>
+    {% block NavLink %}
+        {{super()}}
+    {% endblock %}
 
-                <button class="close" onclick="closeMenu()">
-                    <img src="/templates/res/icons/closeIcon.svg" alt="menu btn"/>
-                </button>
-            </div>
-                <a href="/about" class="mob-nav-link">About</a>
-                <a href="/documentation" class="mob-nav-link">Documentation</a>
-                <a href="/logout" class="mob-nav-link">Logout</a>
-                <!--<a href="/signup" class="mob-nav-link">Sign Up</a>-->
-                <!--<a href="/login" class="mob-nav-link">Log In</a>-->
-        </nav>
-    </header>
+    {% block MobLink %}
+        {{super()}}
+    {% endblock %}
 
+
+    {% block content %} 
         <main>
             <div><center><a href="/create"><Button style="">Create</Button></a></center></div>
-            <center><h1>Your Guilds<h1></center>
+            <center><h1 style="color:white">Your Guilds<h1></center>
             {% for i in guilds %}
             <div><a href="/context/{{i.id}}"<p style="color: white;">{{i.name}}</p></a></div>
             {% endfor %}
         </main>
-        <script src="/js/nav.js"></script>
-</body>
-</html>
+
+    {% endblock %}

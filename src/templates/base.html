@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/error.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/error.css">
     {% endblock %}
  
 </head>
@@ -18,16 +18,16 @@
         <div class="alert alert-{{category}}"> {{ message }}</div>
     {% endfor %}
 
-    <img class="background" src="res/icons/bgLayer.svg" alt="background"/>
+    <img class="background" src="/res/icons/bgLayer.svg" alt="background"/>
 
     <header id="header">
         <nav>
-            <a href="/" class="logo"><img src="res/icons/logo.svg" alt="company logo"/></a>
+            <a href="/" class="logo"><img src="/res/icons/logo.svg" alt="company logo"/></a>
             <div class="nav-links">
                 {% block NavLink %} 
                 
                     <a href="/" class="nav-link ">About</a>
-                    <a href="/documentation" class="nav-link">Documentation</a>
+                    <a href="/dashboard" class="nav-link">Dashboard</a>
                     {% if not session.user %}
                         <a href="signup" class="nav-link" >Sign Up</a>
                         <a href="login" class="nav-link" >Log in</a>
@@ -43,7 +43,7 @@
 
         <nav class="mob-nav" id="mobNav">
             <div class="mob-nav-header">
-                <a href="" class="logo"><img src="res/icons/logo.svg" alt="company logo"/></a>
+                <a href="" class="logo"><img src="/res/icons/logo.svg" alt="company logo"/></a>
 
                 <button class="close" onclick="closeMenu()">
                     <img src="/templates/res/icons/closeIcon.svg" alt="menu btn"/>
@@ -52,7 +52,7 @@
                 {% block MobLink %} 
                 
                     <a href="/" class="mob-nav-link ">About</a>
-                    <a href="/documentation" class="mob-nav-link">Documentation</a>
+                    <a href="/dashboard" class="mob-nav-link">Dashboard</a>
                     {% if not session.user %}
                         <a href='signup' class="mob-nav-link" >Sign Up</a>
                         <a href='login'  class="mob-nav-link" >Log in</a>
