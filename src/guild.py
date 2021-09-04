@@ -69,13 +69,16 @@ async def channelContext(guild_id):
                 return(await render_template("channelContext.html" , guild_id = guild_id, guild_name = guild.name, channels = channels[1:]))
             elif request.method == "POST":
                 form = await request.form
+                print("form")
+                print(form)
                 guild.context = form["context"]
                 if bool(form['channel']) :
                     channel_id = int(form['channel'])
                 else:
                     # "1" because it will be easy to handle than null value
                     channel_id = 1 
-                context = models.Context(guild_id = int(guild_id),channel_id = channel_id, name = form['name'], para = form['context'])
+                # TODO: work on context names
+                context = models.Context(guild_id = int(guild_id),channel_id = channel_id, name = "", para = form['context'])
                 sess.add(context)
                 sess.commit()
                 return("context changed for "+ str(guild_id))

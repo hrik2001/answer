@@ -28,3 +28,15 @@ class AnswerCog(commands.Cog):
             await ctx.send(self.ask(arg , current_guild.context ))
         else:
             await ctx.send("register the guild first")
+
+    @commands.command()
+    async def canswer(self , ctx , * , arg):
+        current_guild = sess.query(models.Guild).filter_by(id = int(ctx.guild.id)).first()
+        if current_guild:
+            channel_context = sess.query(models.Context).filter_by(channel_id = ctx.channel.id).first()
+            if channel_context:
+                await ctx.send(self.ask(arg , channel_context.para ))
+            else:
+                await ctx.send("No context for this channel")
+        else:
+            await ctx.send("register the guild first")
