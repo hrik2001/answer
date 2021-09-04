@@ -55,8 +55,18 @@ That's all folks!
 #### Login Page 
 ![alt text](https://raw.githubusercontent.com/ayush-lab/answer/master/src/screenshots/login.png)
 
-#### Context Page 
+#### Dashboard
+![alt text](https://raw.githubusercontent.com/ayush-lab/answer/master/src/screenshots/Dashboard.png)
+
+#### Global Context Page 
 ![alt text](https://raw.githubusercontent.com/ayush-lab/answer/master/src/screenshots/context.png)
+
+#### Context Channel Page 
+![alt text](https://raw.githubusercontent.com/ayush-lab/answer/master/src/screenshots/context2.png)
+
+#### OTP Page 
+![alt text](https://raw.githubusercontent.com/ayush-lab/answer/master/src/screenshots/otp.png)
+
 
 
 
