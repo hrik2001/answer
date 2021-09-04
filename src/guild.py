@@ -23,14 +23,17 @@ async def create():
         try:
             prev_entry = sess.query(models.Verify).filter_by(username = session["user"]).first()
             if prev_entry:
-                return(prev_entry.otp)
+                # return(prev_entry.otp)
+                return(await render_template("otp.html", otp=prev_entry.otp))
+
             else:
                 otp = gen(10)
                 verification = models.Verify(username = session["user"] , otp = otp)
                 sess.add(verification)
                 sess.commit()
                 # return(session["user"])
-                return(otp)
+                # return(otp)
+                return(await render_template("otp.html", otp=otp))
         except:
             return(redirect("/login"))
 
@@ -41,18 +44,19 @@ async def context(guild_id):
         guild = sess.query(models.Guild).filter_by(id = int(guild_id)).first()
         if username == guild.username:
             if(not guild):
-                return "Guild doesnt exist"
+                return(await render_template("error.html", error="Guild doesnt exist"))
             if request.method == "GET":
                 return(await render_template("context.html" , guild_id = guild_id, guild_name = guild.name))
             elif request.method == "POST":
                 form = await request.form
                 guild.context = form["context"]
                 sess.commit()
-                return("context changed for "+ str(guild_id))
+                return(await render_template("error.html",error="context changed for" + str(guild_id)))
         else:
-            return "You don't own this server"
+            return(await render_template("error.html", error="You don't own this server"))
     except:
-        return "You need to login first"
+        return(await render_template("error.html", error="You need to login first"))
+
 
 
 @guild.route("/channelContext/<int:guild_id>", methods=["GET", "POST"])
@@ -81,9 +85,10 @@ async def channelContext(guild_id):
                 context = models.Context(guild_id = int(guild_id),channel_id = channel_id, name = "", para = form['context'])
                 sess.add(context)
                 sess.commit()
-                return("context changed for "+ str(guild_id))
+                return(await render_template("error.html",error="context changed for" + str(guild_id)))
         else:
-            return "You don't own this server"
+            return(await render_template("error.html", error="You don't dont this server"))
+
     except Exception as e:
         return "You need to login first" + str(e)
 
@@ -94,4 +99,4 @@ async def dashboard():
         guilds = sess.query(models.Guild).filter_by(username = username).all()
         return (await render_template("dashboard.html" , guilds = guilds))
     except:
-        return "You need to login first"
+        return(await render_template("error.html", error="You need to login first"))

@@ -1,4 +1,5 @@
 # !answer
+![alt text](https://raw.githubusercontent.com/ayush-lab/answer/master/src/templates/res/images/heroImg.svg)    
 !answer is a discord bot that leverages state of the art artifical intelligence to serve your users in your
 discord guild. You can give the bot context paragraphs, from which the bot will reply to any questions of users.
 Best used to answer a user's doubt about FAQs or rules or venue.  
@@ -54,8 +55,18 @@ That's all folks!
 #### Login Page 
 ![alt text](https://raw.githubusercontent.com/ayush-lab/answer/master/src/screenshots/login.png)
 
-#### Context Page 
+#### Dashboard
+![alt text](https://raw.githubusercontent.com/ayush-lab/answer/master/src/screenshots/Dashboard.png)
+
+#### Global Context Page 
 ![alt text](https://raw.githubusercontent.com/ayush-lab/answer/master/src/screenshots/context.png)
+
+#### Context Channel Page 
+![alt text](https://raw.githubusercontent.com/ayush-lab/answer/master/src/screenshots/context2.png)
+
+#### OTP Page 
+![alt text](https://raw.githubusercontent.com/ayush-lab/answer/master/src/screenshots/otp.png)
+
 
 
 

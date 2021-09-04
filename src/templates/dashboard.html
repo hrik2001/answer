@@ -3,6 +3,53 @@
     {% block head %}
         {{ super() }}
         <title>Dashboard</title>
+        <style>
+            .guilds{
+                display:flex;
+                flex-wrap:wrap;
+                justify-content: space-between;
+                margin-top:4rem;
+            }
+            .guild-card{
+                padding:20px;
+                border:0px solid white;
+                border-radius:2px;
+                text-align:center;
+                width:23vw;
+                height:35vh;
+                margin-bottom:3rem;
+                min-width:150px;
+                min-height:120px;
+                margin-right:2rem;
+                background:#373740;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+            }
+            .guild-card h4{
+                color:white;
+                font-weight: bold;
+                font-size: 24px;
+                margin-bottom: 2.5rem;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow:hidden;
+            }
+            .guild-card-subname{
+                text-decoration: none !important;
+                border-radius:2px;
+                padding:8px;
+                border:1px solid grey;
+                text-align: center;
+                transition:all 0.4s ease;
+                color:white;
+            }
+            .guild-card-subname:hover{
+                color:black;
+                background:white;
+                cursor:pointer;
+            }
+
+
+        </style>
     {% endblock %}
 
     {% block NavLink %}
@@ -16,13 +63,19 @@
 
     {% block content %} 
         <main>
-            <div><center><a href="/create"><Button style="">Create</Button></a></center></div>
+            <div><center><a href="/create"><Button >Create Guild</Button></a></center></div>
             <center><h1 style="color:white">Your Guilds<h1></center>
+        
+            <div class="guilds">
             {% for i in guilds %}
-            {{i.name}}
-            <div><a href="/context/{{i.id}}"<p style="color: white;">Guild Context</p></a></div>
-            <div><a href="/channelContext/{{i.id}}"<p style="color: white;">Channel Context</p></a></div>
+                <div class="guild-card">
+                    <h4>{{i.name}}</h4>
+                    <div><a style="text-decoration: none;" href="/context/{{i.id}}"><p class="guild-card-subname" >Guild Context</p></a></div>
+                    <div><a style="text-decoration: none;" href="/channelContext/{{i.id}}"><p class="guild-card-subname" >Channel Context</p></a></div>
+                </div>
+               
             {% endfor %}
+            </div>
         </main>
 
     {% endblock %}

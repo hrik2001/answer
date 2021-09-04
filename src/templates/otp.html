@@ -1,0 +1,36 @@
+
+{% extends "base.html" %}
+{% block head %}
+    {{ super() }}
+    <title>OTP</title>
+    <style>
+        .otp-block{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:80vh;
+        }
+        .otp-block-number{
+            border-radius:3px;
+            padding:2rem;
+            border:2px solid white;
+        }
+    </style>
+
+{% endblock %}
+
+{% block NavLink %}
+    {{super()}}
+{% endblock %}
+
+{% block MobLink %}
+    {{super()}}
+{% endblock %}
+
+
+{% block content %} 
+    <main class="otp-block" >
+        <p class="otp-block-number">Your OTP is: <b>{{otp}}</b> </p>
+    </main>
+
+{% endblock %}
