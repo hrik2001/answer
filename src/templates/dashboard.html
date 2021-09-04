@@ -19,7 +19,9 @@
             <div><center><a href="/create"><Button style="">Create</Button></a></center></div>
             <center><h1 style="color:white">Your Guilds<h1></center>
             {% for i in guilds %}
-            <div><a href="/context/{{i.id}}"<p style="color: white;">{{i.name}}</p></a></div>
+            {{i.name}}
+            <div><a href="/context/{{i.id}}"<p style="color: white;">{{Guild Context}}</p></a></div>
+            <div><a href="/channelContext/{{i.id}}"<p style="color: white;">{{Channel Context}}</p></a></div>
             {% endfor %}
         </main>
 

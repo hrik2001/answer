@@ -7,7 +7,9 @@ import secrets
 import string
 engine = create_engine("sqlite:///data.db")
 models.create(engine)
-
+import os
+from discord.ext import ipc
+ipc_client = ipc.Client(secret_key = os.getenv("IPC_SECRET"))
 sess = Session(engine)
 
 def gen(N):
@@ -51,6 +53,39 @@ async def context(guild_id):
             return "You don't own this server"
     except:
         return "You need to login first"
+
+
+@guild.route("/channelContext/<int:guild_id>", methods=["GET", "POST"])
+async def channelContext(guild_id):
+    try:
+        username = session["user"]
+        guild = sess.query(models.Guild).filter_by(id = int(guild_id)).first()
+        if username == guild.username:
+            if(not guild):
+                return "Guild doesnt exist"
+            if request.method == "GET":
+                channels = await ipc_client.request("channels" , guild_id = guild.id)
+                print(channels)
+                return(await render_template("channelContext.html" , guild_id = guild_id, guild_name = guild.name, channels = channels[1:]))
+            elif request.method == "POST":
+                form = await request.form
+                print("form")
+                print(form)
+                guild.context = form["context"]
+                if bool(form['channel']) :
+                    channel_id = int(form['channel'])
+                else:
+                    # "1" because it will be easy to handle than null value
+                    channel_id = 1 
+                # TODO: work on context names
+                context = models.Context(guild_id = int(guild_id),channel_id = channel_id, name = "", para = form['context'])
+                sess.add(context)
+                sess.commit()
+                return("context changed for "+ str(guild_id))
+        else:
+            return "You don't own this server"
+    except Exception as e:
+        return "You need to login first" + str(e)
 
 @guild.route("/dashboard" , methods = ["GET"] )
 async def dashboard():

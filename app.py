@@ -1,5 +1,4 @@
 from quart import render_template, Quart , session , send_from_directory , redirect
-from discord.ext import ipc
 from dotenv import load_dotenv
 load_dotenv()
 import os
@@ -26,15 +25,18 @@ def js(filename):
 # models.create(app.config["db"])
 app.register_blueprint(auth.auth)
 app.register_blueprint(guild.guild)
-# app.register_blueprint(errorHandler.errorHandler)
+# ipc_client = ipc.Client(secret_key = os.getenv("IPC_SECRET"))
 
-ipc_client = ipc.Client(secret_key = os.getenv("IPC_SECRET"))
+async def channels(gid):
+    channels = await ipc_client.request("channels" , guild_id = gid) 
+    return channels
 
 #merely for testing purpose
 @app.route("/channels/<int:gid>")
 async def servers(gid):
     # guilds = await ipc_client.request("channels" , guild_id = 860087871049564170)
-    guilds = await ipc_client.request("channels" , guild_id = gid)
+    # guilds = await ipc_client.request("channels" , guild_id = gid)
+    guilds = "test"
     return(str(guilds))
 
 @app.route("/")
