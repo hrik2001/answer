@@ -26,7 +26,7 @@ class MyBot(commands.Bot):
 
 
 # bot = commands.Bot(command_prefix="!")
-bot = MyBot(command_prefix="!")
+bot = MyBot(command_prefix="/")
 bot.add_cog(answer.AnswerCog(bot , ask))
 bot.add_cog(IPC.IPCCog(bot))
 bot.add_cog(register.RegisterCog(bot))
