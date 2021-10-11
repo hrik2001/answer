@@ -41,6 +41,8 @@ git remote add upstream https://github.com/hrik2001/answer.git   #if you want ht
 git remote add upstream git@github.com:hrik2001/answer.git       #if you want ssh remote
 ```
 Now, you can pull from upstream to make updates to the `master` branch of your fork and also locally  
+Also join our discord server for development related updates and more:      
+https://discord.gg/zBXpW2h2xJ     
 That's all folks!
 
 ## Screenshots
